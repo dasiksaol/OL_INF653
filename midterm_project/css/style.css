@@ -1,0 +1,150 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #1a1a2e;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+header h1 { font-size: 1.8rem; letter-spacing: 1px; }
+header span { font-size: 0.9rem; color: #aaa; }
+
+/* Controls bar */
+.controls {
+    background: white;
+    padding: 20px 40px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.controls-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.control-group { display: flex; flex-direction: column; gap: 5px; }
+
+.control-group label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.controls select {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    background: white;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.controls select:focus { outline: none; border-color: #e94560; }
+
+/* Buttons */
+.btn {
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+}
+
+.btn-filter { background: #e94560; color: white; font-weight: bold; }
+.btn-filter:hover { background: #c73652; }
+
+.btn-sort { background: #1a1a2e; color: white; font-weight: bold; }
+.btn-sort:hover { background: #e94560; }
+
+.btn-clear { background: #eee; color: #555; }
+.btn-clear:hover { background: #ddd; }
+
+/* Divider between filter and sort */
+.divider { width: 1px; height: 40px; background: #ddd; align-self: flex-end; }
+
+/* Active filter badges */
+.active-filters { margin-top: 12px; font-size: 0.85rem; color: #777; }
+
+.active-filters span {
+    background: #fff0f2;
+    color: #e94560;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+/* Main content */
+main { padding: 30px 40px; }
+.results-count { font-size: 0.9rem; color: #777; margin-bottom: 16px; }
+
+/* Vehicle grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.card-header { background: #1a1a2e; color: white; padding: 16px 20px; }
+.card-header .year-model { font-size: 1.2rem; font-weight: bold; }
+.card-header .make { font-size: 0.85rem; color: #aaa; margin-top: 2px; }
+
+.card-body { padding: 16px 20px; }
+
+.price { font-size: 1.5rem; font-weight: bold; color: #e94560; margin-bottom: 12px; }
+
+.badges { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.badge { padding: 4px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: bold; }
+.badge-type  { background: #e8f4fd; color: #1a6fa8; }
+.badge-class { background: #fef3e2; color: #a06000; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85rem;
+    color: #aaa;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header, .controls, main { padding-left: 20px; padding-right: 20px; }
+    .grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 1.4rem; }
+    .controls select { min-width: 100%; }
+    .divider { display: none; }
+}

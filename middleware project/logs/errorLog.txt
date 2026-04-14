@@ -1,0 +1,1 @@
+4b5149c6-bff8-4114-8dfd-c3f760eec90d 	 [2026-04-13 23:27:49] 	 Name: Error 	 Message: Intentional test error 	 URL: /error
